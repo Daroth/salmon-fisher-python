@@ -12,6 +12,7 @@ setup(
         'Flask-WTF==0.8',
         'Flask-Script==0.3.3',
         'Flask-CouchDBKit==0.3.5',
+         'Flask-DebugToolbar==0.7.1',
     ],
     package_data = {
         '': ['*.txt', '*.rst'],
