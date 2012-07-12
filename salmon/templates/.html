@@ -1,0 +1,32 @@
+<h2>Hello 
+  <u>{{user.pseudo|escape}}
+  </u>
+</h2>Password change
+
+<form{{__pyjade_attrs(attrs=[('method',('post')), ('class', (('form-horizontal')))])}}>
+  <div{{__pyjade_attrs(attrs=[('class', (('control-group')))])}}>
+    <label{{__pyjade_attrs(attrs=[('for',('old-password')), ('class', (('control-label')))])}}>Old password
+    </label>
+    <div{{__pyjade_attrs(attrs=[('class', (('controls')))])}}>
+      <input{{__pyjade_attrs(attrs=[('id',('old-password')), ('type',('password')), ('name',('old-password'))])}}/>
+    </div>
+  </div>
+  <div{{__pyjade_attrs(attrs=[('class', (('control-group')))])}}>
+    <label{{__pyjade_attrs(attrs=[('for',('new-password')), ('class', (('control-label')))])}}>New password
+    </label>
+    <div{{__pyjade_attrs(attrs=[('class', (('controls')))])}}>
+      <input{{__pyjade_attrs(attrs=[('id',('new-password')), ('type',('password')), ('name',('new-password'))])}}/>
+    </div>
+  </div>
+  <div{{__pyjade_attrs(attrs=[('class', (('control-group')))])}}>
+    <label{{__pyjade_attrs(attrs=[('for',('new-password-2')), ('class', (('control-label')))])}}>New password (again)
+    </label>
+    <div{{__pyjade_attrs(attrs=[('class', (('controls')))])}}>
+      <input{{__pyjade_attrs(attrs=[('id',('new-password-2')), ('type',('password')), ('name',('new-password-2'))])}}/>
+    </div>
+  </div>
+  <div{{__pyjade_attrs(attrs=[('class', (('form-actions')))])}}>
+    <button{{__pyjade_attrs(attrs=[('type',('submit')), ('class', (('btn') , ('btn-primary')))])}}>Send
+    </button>
+  </div>
+</form>

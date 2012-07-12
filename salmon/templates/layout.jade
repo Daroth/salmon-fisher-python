@@ -22,19 +22,19 @@ html
                 a(href='/about') About
               li
                 a(href='/contact') Contact
-              - if (user && user.id)
-                li
-                  a(href='/user') Admin
-                li
-                  a(href='/logout') Disconnection
+              //- if (user && user.id)
+              //  li
+              //    a(href='/user') Admin
+              //  li
+              //    a(href='/logout') Disconnection
     div.container
       h1= title
-      - if (flash.error !== undefined)
-        div
-         each err in flash.error
-            div.label.label-important= err
-      - if(flash.success != undefined)
-        div
-          each success in flash.success
-           div.label.label-success= success
+      // - if (flash.error != undefined)
+      //  div
+      //   each err in flash.error
+      //      div.label.label-important= err
+      //- if(flash.success != undefined)
+      //  div
+      //    each success in flash.success
+      //     div.label.label-success= success
       div!= body

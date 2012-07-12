@@ -10,6 +10,8 @@ setup(
         'Flask-Login==0.1.3',
         'flask-peewee==0.5.4',
         'Flask-WTF==0.8',
+        'Flask-Script==0.3.3',
+        'Flask-CouchDBKit==0.3.5',
     ],
     package_data = {
         '': ['*.txt', '*.rst'],

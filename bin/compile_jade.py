@@ -1,4 +1,4 @@
-cd templates
+cd salmon/templates
 for filz in $(ls *.jade)                                                                                   
 do
 base=$(echo $filz | sed 's/\.[^.]*$//')
