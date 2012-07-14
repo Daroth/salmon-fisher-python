@@ -4,3 +4,5 @@ build/
 templates/*.html
 *.swp
 *.pyc
+local_config.py
+*.db
