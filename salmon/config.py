@@ -4,5 +4,5 @@ class Configuration(object):
     'engine': 'peewee.SqliteDatabase',
     'check_same_thread': False,
   }
-  DEBUG = False
+  DEBUG = True
   SECRET_KEY = 'overrites me!!!'

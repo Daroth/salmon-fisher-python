@@ -15,6 +15,9 @@ setup(
         'Flask-DebugToolbar==0.7.1',
         'wtf-peewee==0.1.3',
     ],
+    extras_require= {
+        'statlib': ['1.1',],
+    },
     package_data = {
         '': ['*.txt', '*.rst'],
     },

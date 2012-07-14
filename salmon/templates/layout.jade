@@ -17,16 +17,16 @@ html
           div.nav-collapse
             ul.nav
               li
-                a(href='/') Index
+                a(href=url_for("web.index")) Index
               li
-                a(href='/about') About
+                a(href=url_for("web.about")) About
               li
                 a(href='/contact') Contact
-              //- if (user && user.id)
-              //  li
-              //    a(href='/user') Admin
-              //  li
-              //    a(href='/logout') Disconnection
+              - if (user)
+                li
+                  a(href=url_for("auth.login")) Admin
+                li
+                  a(href=url_for("auth.logout")) Disconnection
     div.container
       h1= title
       // - if (flash.error != undefined)
