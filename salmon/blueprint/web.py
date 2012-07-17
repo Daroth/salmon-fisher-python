@@ -10,7 +10,8 @@ b = Blueprint('web', __name__)
 @b.context_processor
 def inject_user():
   user = auth.get_logged_in_user()
-  return dict(user=user)
+  siteName = 'Salmon Fisher Torrent Manager'
+  return dict(user=user, siteName=siteName)
 
 @b.route('/', methods=['GET', ])
 @auth.login_required
