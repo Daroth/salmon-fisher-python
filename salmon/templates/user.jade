@@ -1,20 +1,34 @@
-h2 Hello 
-  u= user.pseudo
-| Password change
+extends layout
 
-form.form-horizontal(method='post')
-  div.control-group
-    label.control-label(for='old-password') Old password
-    div.controls
-      input#old-password(type='password', name='old-password')
-  div.control-group
-    label.control-label(for='new-password') New password
-    div.controls
-      input#new-password(type='password', name='new-password')
-  div.control-group
-    label.control-label(for='new-password-2') New password (again)
-    div.controls
-      input#new-password-2(type='password', name='new-password-2')
-  div.form-actions
-   button.btn.btn-primary(type='submit') Send
+block body
+  h2 Hello 
+    u= user.username
+  | Password change
+
+  
+
+  form.form-horizontal(method='post')
+    div.control-group
+      label.control-label(for='old_password') Old password
+      div.controls
+        // input#old_password(type='password', name='old_password')
+        | #{form.old_password}
+        - each error in form.old_password.errors
+          span.help-inline #{error}
+    div.control-group
+      label.control-label(for='new_password_1') New password
+      div.controls
+        //input#new_password_1(type='password', name='new_password_1')
+        | #{form.new_password_1}
+        - each error in form.new_password_1.errors
+          span.help-inline #{error}
+    div.control-group
+      label.control-label(for='new_password_2') New password (again)
+      div.controls
+        // input#new_password_2(type='password', name='new_password_2')
+        | #{form.new_password_2}
+        - each error in form.new_password_2.errors
+          span.help-inline #{error}
+    div.form-actions
+     button.btn.btn-primary(type='submit') Send
 
