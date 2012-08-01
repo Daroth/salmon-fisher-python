@@ -8,3 +8,4 @@ class Configuration(object):
   SECRET_KEY = 'overrites me!!!'
   #BABEL_DEFAULT_LOCALE = 'fr'
   DEBUG_TB_INTERCEPT_REDIRECTS=False
+  TORRENTS_DIR_PATH = '/tmp/'

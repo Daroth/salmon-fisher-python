@@ -18,7 +18,7 @@ body
               a(data-toggle='modal', href='#modal_contact') Contact
             - if (user and user.id)
               li
-                a(href='/admin/') Admin
+                a(href=url_for("web.account")) Admin
               li
                 a(href=url_for("auth.logout")) Logout
   div
