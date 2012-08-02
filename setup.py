@@ -12,8 +12,8 @@ setup(
         'Flask-WTF==0.8',
         'Flask-Script==0.3.3',
         'Flask-DebugToolbar==0.7.1',
-        'wtf-peewee==0.1.3',
- #        'Flask-Babel==0.8',
+        'wtf-peewee==0.1.3'#,
+        #'Flask-Babel==0.8'
     ],
     extras_require= {
         'statlib': ['1.1',],
