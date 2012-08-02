@@ -28,42 +28,49 @@ table.table.table-striped
 		th="Ratio"
 	
 	- each torrent in torrents
-		tr
-			td
-				- each tag in torrent.tags
-					span.label=tag
-					span=" "
-				-if(torrent.percentage!='100')
-					span=torrent.name
-				-else
-					a(href=torrent.url)=torrent.name
+		- if(filter and filter.show_finished=="true" and torrent.percentage!='100')
+					tr
+		- elif(filter and ((filter.show_paused=="true" and torrent.active=="true") or (torrent.percentage=='100' and filter.show_finished=="false")))
+					tr
+		- elif(filter and ((filter.show_current=="true" and torrent.active=="false") or (torrent.percentage=='100' and filter.show_finished=="false")))
+					tr
+		- else
+			tr
+				td
+					- each tag in torrent.tags
+						span.label=tag
+						span=" "
+					-if(torrent.percentage!='100')
+						span=torrent.name
+					-else
+						a(href=torrent.url)=torrent.name
 					
-			td
-				-if(torrent.percentage=='100')
-					.progress
-						.bar(style="width: " + torrent.percentage + "%")
-				-else
-					- if(torrent.active=="true")
-						.progress.progress-striped.active
+				td
+					-if(torrent.percentage=='100')
+						.progress
 							.bar(style="width: " + torrent.percentage + "%")
-					- else
-						.progress.progress-striped
-							.bar(style="width: " + torrent.percentage + "%")
+					-else
+						- if(torrent.active=="true")
+							.progress.progress-striped.active
+								.bar(style="width: " + torrent.percentage + "%")
+						- else
+							.progress.progress-striped
+								.bar(style="width: " + torrent.percentage + "%")
 							
-			td=torrent.size
+				td=torrent.size
 			
-			td
-				- if(torrent.active=="true")
-					i.icon-pause
-				- else
-					i.icon-play
-				span=" "
-				i.icon-remove
+				td
+					- if(torrent.active=="true")
+						i.icon-pause
+					- else
+						i.icon-play
+					span=" "
+					i.icon-remove
 			
-			td
-				- if(torrent.ratio>1)
-					span.label.label-success=torrent.ratio
-				- elif(torrent.ratio>0.75)
-					span.label.label-warning=torrent.ratio
-				- else
-					span.label.label-important=torrent.ratio
+				td
+					- if(torrent.ratio>1)
+						span.label.label-success=torrent.ratio
+					- elif(torrent.ratio>0.75)
+						span.label.label-warning=torrent.ratio
+					- else
+						span.label.label-important=torrent.ratio
