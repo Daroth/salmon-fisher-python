@@ -29,8 +29,8 @@ def index_post():
 @auth.login_required
 def index():
   if request.method == 'GET':
-    ret = render_template('main.jade',
-    	title='Main',
+    ret = render_template('index.jade',
+    	title='index',
     	username= '',
     	torrents=[
     		{
@@ -111,6 +111,30 @@ def index():
 						'show_current':'false',
 						'show_paused':'false',
 						'tag_filters':[]
+					},
+					{
+						'name':'current',
+						'show_finished':'false',
+						'show_current':'true',
+						'show_paused':'false',
+						'tag_filters':[]
+					},
+					{
+						'name':'paused',
+						'show_finished':'false',
+						'show_current':'false',
+						'show_paused':'true',
+						'tag_filters':[]
+					},
+					{
+						'name':'tags',
+						'show_finished':'true',
+						'show_current':'true',
+						'show_paused':'true',
+						'tag_filters':[
+							['video','serie'],
+							['musique']
+						]
 					}
 			]
     )

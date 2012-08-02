@@ -1,10 +1,25 @@
 extends layout
 
 block body
-  form.form-horizontal(method='post', enctype='multipart/form-data')
-    div.control-group
-      label.control-label(for='file-field') Torrent file
-      div.controls
-        input#file-field(type='file', name='torrent-file')
-    div.form-actions
-      button.btn.btn-primary(type='submit') Upload
+	.container-fluid
+		.row-fluid
+			.span3
+				include ./uploadTorrent.jade
+			.span9
+			
+				ul.nav.nav-tabs
+					li.active
+						a(data-toggle="tab",href="#main_all")="All"
+					- each filter in filters
+						li
+							a(data-toggle="tab",href="#main_" + filter.name)=filter.name
+					li
+						a(onclick="alert('New')")="+"
+
+				.tab-content
+					#main_all.tab-pane.active
+						include ./filtered_list.jade
+					
+					- each filter in filters
+						.tab-pane(id="main_"+filter.name)
+							include ./filtered_list.jade
