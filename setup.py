@@ -5,7 +5,7 @@ setup(
     version = "0.1-SNAPSHOT",
     packages = find_packages(),
     install_requires = [
-        'flask==0.9',
+        'flask==1.0',
         'pyjade==1.5',
         'Flask-Login==0.1.3',
         'flask-peewee==0.5.4',
